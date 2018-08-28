@@ -15,6 +15,10 @@ Mock Support Rooster for GB Multimedia
 * Generate Schedule Screen:
   * Generate schedule based on **rules** specified
   * Return schedule as WeekViewEvent to be printed in Android Week View layout
+  
+## Usages
+* If fetching engineers failed, re-fetch by pulling the screen downwards.
+* On Schedule screen, navigate and scroll to the right until you find the schedule (it begins on the first working day of upcoming week)
 
 ## Libraries Included
 * Retrofit
