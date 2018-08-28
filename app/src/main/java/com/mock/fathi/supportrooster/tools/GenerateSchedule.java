@@ -40,15 +40,19 @@ public class GenerateSchedule {
         // Calendar object
         Calendar cal = Calendar.getInstance();
         cal.set(Calendar.DAY_OF_WEEK, Calendar.MONDAY);
-        cal.set(Calendar.HOUR, 0);
+        cal.set(Calendar.HOUR_OF_DAY, 0);
         cal.set(Calendar.MINUTE, 0);
         cal.set(Calendar.SECOND, 0);
         cal.add(Calendar.DATE, 7);
 
         while(i < total_workdays) {
             try {
-                GenerateScheduleDaily(cal, total_hours_per_shift);
-                i++;
+                if(cal.get(Calendar.DAY_OF_WEEK) != Calendar.SATURDAY && cal.get(Calendar.DAY_OF_WEEK) != Calendar.SUNDAY) {
+                    GenerateScheduleDaily(cal, total_hours_per_shift);
+                    i++;
+                } else {
+                    cal.add(Calendar.DATE, 1);
+                }
             } catch (Exception e) {
                 e.printStackTrace();
                 // Bad algorithm. Redo schedule
@@ -60,8 +64,10 @@ public class GenerateSchedule {
                 this.schedule.clear();
                 this.weekViewEvents.clear();
 
+                cal.clear();
+                cal = Calendar.getInstance();
                 cal.set(Calendar.DAY_OF_WEEK, Calendar.MONDAY);
-                cal.set(Calendar.HOUR, 0);
+                cal.set(Calendar.HOUR_OF_DAY, 0);
                 cal.set(Calendar.MINUTE, 0);
                 cal.set(Calendar.SECOND, 0);
                 cal.add(Calendar.DATE, 7);
