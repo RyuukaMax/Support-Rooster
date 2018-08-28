@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Support Rooster</string>
+
+    <!-- Strings related to main listing -->
+    <string name="eng_name_label">Name:</string>
+    <string name="button_generate">Generate Schedule</string>
+
+    <!-- Strings related to schedule -->
+    <string name="title_activity_schedule">GenerateSchedule</string>
+    <string name="schedule_week_1">Week 1</string>
+    <string name="schedule_week_2">Week 2</string>
+    <string name="schedule_col_shiftday">Shift/Day</string>
+    <string name="schedule_col_day_mon">Monday</string>
+    <string name="schedule_col_day_tue">Tuesday</string>
+    <string name="schedule_col_day_wed">Wednesday</string>
+    <string name="schedule_col_day_thu">Thursday</string>
+    <string name="schedule_col_day_fri">Friday</string>
+</resources>
